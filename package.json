@@ -1,0 +1,15 @@
+{
+  "name": "electron-learn-project",
+  "version": "1.0.0",
+  "description": "Simple electron project to learn the framework",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^1.6.1"
+  }
+}
