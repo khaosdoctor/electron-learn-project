@@ -4,12 +4,50 @@
   "description": "Simple electron project to learn the framework",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make:windows": "electron-forge make -p win32",
+    "make:linux": "electron-forge make -p linux",
+    "make:mac": "electron-forge make -p darwin"
   },
   "keywords": [],
-  "author": "",
+  "author": "Lucas Santos",
   "license": "ISC",
   "dependencies": {
-    "electron": "^1.6.1"
+    "electron-squirrel-startup": "^1.0.0"
+    },
+    "devDependencies": {
+      "@electron-forge/cli": "^6.0.0-beta.54",
+      "@electron-forge/maker-deb": "^6.0.0-beta.54",
+      "@electron-forge/maker-rpm": "^6.0.0-beta.54",
+      "@electron-forge/maker-squirrel": "^6.0.0-beta.54",
+      "@electron-forge/maker-zip": "^6.0.0-beta.54",
+      "electron": "^10.1.5"
+    },
+    "config": {
+      "forge": {
+        "packagerConfig": {},
+        "makers": [{
+            "name": "@electron-forge/maker-squirrel",
+            "config": {
+              "name": "electron_learn_project"
+            }
+          },
+          {
+            "name": "@electron-forge/maker-zip",
+            "platforms": [
+              "darwin"
+            ]
+          },
+          {
+            "name": "@electron-forge/maker-deb",
+            "config": {}
+          },
+          {
+            "name": "@electron-forge/maker-rpm",
+            "config": {}
+          }
+        ]
+      }
   }
 }
